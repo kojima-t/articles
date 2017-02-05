@@ -1,0 +1,13 @@
+languageCode = "ja"
+title = "Various Surfaces"
+baseURL = "https://kojima-t.github.io"
+
+[Params]
+subtitle = "Machine Learning and Developemt Environment."
+author = "Takahiro Kojima"
+bio = "Machine Learning Engineer"
+location = "Japan/Kyoto"
+copyright  = "Written by Takahiro Kojima."
+profile = "/images/profile-img.png"
+facebook = "https://www.facebook.com/kojima.takahiro12"
+github = "https://github.com/kojima-t"
