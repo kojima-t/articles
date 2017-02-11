@@ -2,7 +2,7 @@
 date = "2017-02-11T16:30:13+09:00"
 title = "rbenvを用いたRubyのインストール"
 draft = false
-
+tags = ["Ruby", "rbenv"]
 +++
 
 普段は Python ばかり使っているのだが、最近 Python にも飽きてきて、休日くらい違う言語で動くプログラムをいじりたいなと思った。そこでとりあえず Ruby の仮想環境を [pyenv](https://github.com/yyuu/pyenv) みたく作れる[^1] [rbenv](https://github.com/rbenv/rbenv) を使ってみることにした。
