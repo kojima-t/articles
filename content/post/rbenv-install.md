@@ -27,14 +27,14 @@ tags = ["Ruby", "rbenv"]
 
 なにはともあれ、必要なものをインストールしよう。
 
-```
+```bash
 $ git clone https://github.com/rbenv/rbenv.git ~/.rbenv
 $ cd ~/.rbenv && src/configure && make -C src
 ```
 
 次にパスを通す。
 
-```
+```bash
 # bash
 $ echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bash_profile
 # fish shell
@@ -45,7 +45,7 @@ Ubuntu ユーザーは `~/.bash_profile` を `~/.bashrc` に。 zsh ユーザー
 
 そして、次のコマンドを実行する。
 
-```
+```bash
 $ ~/.rbenv/bin/rbenv init -
 ```
 
@@ -53,13 +53,13 @@ $ ~/.rbenv/bin/rbenv init -
 
 シェルを再起動し、以下の出力になればインストールは成功である。
 
-```
+```bash
 $ type rbenv # => "rbenv is a function"
 ```
 
 続いて、 `ruby-build` をインストールする。
 
-```
+```bash
 $ git clone https://github.com/rbenv/ruby-build.git ~/.rbenv/plugins/ruby-build
 ```
 
@@ -69,7 +69,7 @@ $ git clone https://github.com/rbenv/ruby-build.git ~/.rbenv/plugins/ruby-build
 
 ただ単に `rbenv install 2.3.1` などとするだけでは僕の環境ではインストールすることができなかった。よくわからないエラーが出て、インストールできなかったのである。
 
-```
+```bash
 # エラー内容
 /home/user/.rbenv/versions/2.3.1/lib/ruby/2.3.0/yaml.rb:5:in `<top (required)>':
 It seems your ruby installation is missing psych (for YAML output).
@@ -80,7 +80,7 @@ ERROR: Ruby install aborted due to missing extensions
 
 原因は結局わからなかったのだが、[ruby-build の wiki](https://github.com/rbenv/ruby-build/wiki#build-failure-of-fiddle-with-ruby-220) に書いてある環境変数を設定してインストールしたら、僕の環境ではインストールできた。
 
-```
+```bash
 # fish shell
 $ env RUBY_CONFIGURE_OPTS=--enable-shared rbenv install 2.3.1
 ```
@@ -91,14 +91,14 @@ $ env RUBY_CONFIGURE_OPTS=--enable-shared rbenv install 2.3.1
 
 `~/myapp` があるとして、
 
-```
+```bash
 $ cd ~/myapp
 $ rbenv local 2.3.0
 ```
 
 などとすると、 `myapp` 下では Ruby の version は 2.3.0 が使用されることになる。`rbenv`で設定した Ruby を使用したいと明示する場合には、 `rbenv exec` を使用すれば良い。
 
-```
+```bash
 $ rbenv exec gem install bundler # rbenv 環境下での bundler をインストール
 $ rbenv exec bundle install # rbenv 環境下での bundler を用いて bundle install
 $ rbenv exec bundle exec ruby app.rb
